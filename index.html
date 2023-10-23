@@ -10,16 +10,15 @@
     <header>
       <h1>Top 20 moives</h1>
       <nav>
-        <p style="font-size: 20px;">search :</p>
+        <p style="font-size: 20px">search :</p>
         <div style="padding-left: 10px">
-          <div class="btn"></div>
-          <input
-            type="text"
-            placeholder="Enter the movie title."
-            style="padding-left: 5px"
-          />
-          <input type="button" onclick="btnClick()" value="move" />
-          <script type="text/javascript">
+          <form id="form" onsubmit="handleSubmit(event)">
+          <input type="text" id="searchBox" placeholder="Enter the movie title." style="padding-left: 5px"/>
+          <button type="submit" id = "searchBtn">move</button>
+        </form> 
+          <!-- 온클릭 추가 후 알럿창띄워서 확인 -->
+               
+          <!-- <script type="text/javascript">
             function btnClick() {
               if (confirm("이동하시겠습니까?") == true) {
                 location.href = "search.html";
@@ -27,7 +26,7 @@
                 return;
               }
             }
-          </script>
+          </script> -->
         </div>
       </nav>
     </header>
@@ -37,6 +36,19 @@
     </section>
 
     <footer></footer>
-    <script src="hh.js"></script>
+    <script src="hh.js">
+      function handleSubmit(event) { 
+        event.preventDefault();
+        
+          // preventDefault();
+          // 태그 고유기능 막기(기본 값을 막는다)
+          // form의 고유기능이 정지가 되고 제출이 사라지지 않고 뜸
+          
+        const searchBox = document.getElementById("searchBox").value;
+        searchMovie(searchBox);
+       
+      }
+
+    </script>
   </body>
 </html>

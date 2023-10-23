@@ -21,16 +21,39 @@ const options = {
       const id = item['id'];
       console.log(title, overview, poster_path, vote_average, id)
 
-      const card = document.createElement('div')  //html 수정
-      cardlist.appendChild(card)  // 위에 const cardlist를 가리키는 거임
+      const card = document.createElement('div')
+      card.classList.add("cardbox")
+
 
       card.innerHTML = `
-      <img src="https://image.tmdb.org/t/p/w500${poster_path}">
+      <img src="https://image.tmdb.org/t/p/w300${poster_path}">
       <h3>${title}</h3>
       <p>${overview}</p>
       <p>Rating: ${vote_average}</p>
       `
+
+      cardlist.appendChild(card)  // 위에 const cardlist를 가리키는 거임
     });
     })
+    
+
+
+
+    const form = document.getElementById("form")
+    const input = document.getElementById("searchBox") 
+    form.addEventListener("submit", searchMovie)
+    
+
+
+  
+    
+
+    function searchMovie(searchBox) {
+        const a = item.title.filter(item => {
+        return item.title.toLowerCase().includes(searchBox.toLowerCase())
+    
+      });
+    
       
-    .catch(err => console.error(err));
+
+    }

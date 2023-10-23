@@ -2,6 +2,9 @@
     background-color: whitesmoke;
 }
 
+html, body {
+    min-height: 100vh; }
+
 h1 {
     display: flex;
     justify-content: center;
@@ -25,33 +28,40 @@ input {
     border-radius: 10px;
     border: gray solid 1px;
     margin-right: 5px;
+    margin: 0;
 } 
     
+#searchBtn {
+    border-radius: 10px;
+    border: gray solid 1px;
+    margin-right: 5px;
+    font-size: medium;
+    height: 30px;
+}
 
 .cardlist {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
-    padding: 20px;
-    margin: 20px;
+    display: flex;  
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-around;
   }
 
-  /* -------------------------- */
-
-
-.nav1 {
+  .cardbox {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px; 
-}
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    width: 300px;
+    height: 900px;
+    border: 1px lightgrey solid;
+    margin-bottom: 20px;
 
-  button.homeBtn {
+  }
+
+   button.homeBtn {
     margin: 0;
     padding: 7px;
     border-radius: 10px;
     border: grey 1px solid;
-
 }
 
